@@ -1,0 +1,102 @@
+@import '../../../styles/config';
+@import '../../../styles/root';
+
+.auth {
+    height:80vh;
+    display:flex;
+    font-size:2rem;
+    align-items:center;
+    margin-right:10rem;
+    margin-left:10rem;
+
+    @include respond(misc3) {
+        flex-wrap:wrap;
+        height:60vh;
+    }
+
+    &__intro {
+        flex-basis:50%;
+        flex-grow:0;
+        flex-shrink:0;
+        margin-right:5rem;
+        //height:40%;
+
+        @include respond(misc3) {
+            flex-basis:100%;
+            padding-top: 3rem;
+        }
+        
+        h2 {
+          color:$purple;
+          margin-bottom:5rem;
+
+          @include respond(misc3) {
+            text-align:center;
+         }
+        }
+
+        h4 {
+            width:80%;
+            font-size:2.5rem;
+
+            @include respond(misc3) {
+               width:100%;
+               text-align:center;
+            }
+        }
+    }
+
+    &__content {
+       // min-height:50%;
+        flex-basis:80%;
+        border-radius:5px;
+        background-color:$white;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        padding-top:2rem;
+       padding-bottom:2rem;
+
+        @include respond(misc3) {
+            margin-top: 3rem;
+            flex-basis:100%;
+        }
+
+        h2 {
+            text-align:center;
+        }
+
+        h4 {
+            text-align:center;
+        }
+
+        &__login,
+        &__register {
+            width:80%;
+            margin:2rem auto;
+
+            h6 {
+                text-align:center;
+                font-size:1.5rem;
+            }
+        }
+        
+    }
+     
+}
+
+.loading__container {
+    height:20rem;
+    width:20rem;
+}
+
+.spinner {
+    height:3rem;
+    width:3rem;
+    background-color:transparent;
+    border:4px solid white;
+    border-radius: 50%;
+    border-bottom-color: transparent;
+    animation: spin infinite .7s both;
+}
+

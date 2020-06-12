@@ -1,0 +1,141 @@
+@import '../../../styles/config';
+@import '../../../styles/root';
+
+
+.project {
+   margin:2rem;
+
+   h4 {
+    color:$blue;
+    font-size:2.5rem;
+    margin-bottom:1rem;
+   }
+
+   &__item {
+    //    height:10rem;
+       background-color: $project_bg;
+       border-radius:2px;
+       margin:1rem 4rem;
+       padding:3rem;
+
+       h4 {
+        font-size:2rem;
+       }
+
+       h6 {
+        font-size:1.5rem;
+       }
+
+       p {
+        font-size:1.2rem;
+        margin-bottom:1rem;
+       }
+   }
+  
+}
+
+.projectdetils {
+    margin:2rem 5rem;
+    background-color: $white;
+    border-radius:3px;
+    padding:3rem;
+    
+    &__container {
+        background-color:$grey;
+        padding:3rem 5rem;
+    }
+
+
+    h4 {
+     color:$blue;
+     font-size:2.5rem;
+     margin-bottom:.5rem;
+    }
+
+    h5 {
+        font-size:2rem;
+    }
+
+    h6 {
+        font-size:1.5rem;
+        margin-bottom:1rem;
+    }
+
+    h5,h6 {
+        color:$purple;
+    }
+ 
+    p {
+         font-size:1.5rem;
+         margin-bottom:1rem;
+    }
+ }
+
+ 
+.createproject {
+    @include flexCenter;
+    flex-direction:column;
+    background-color: $white;
+    border-radius:3px;
+    padding:3rem;
+    margin:5rem;
+
+    h4  {
+        font-size:2rem;
+    }
+
+    @include respond(misc3) {
+      height:50vh;
+    }
+
+    &__form {
+        width:60%;
+
+        @include respond(misc3) {
+            width:85%;
+        }
+    }
+    
+ }
+
+
+ .event {
+    margin:1rem;
+    // @include flexCenter;
+    // flex-direction: column;
+
+    h4 {
+     color:$blue;
+     font-size:2.5rem;
+    }
+
+    &__container {
+        display:flex;
+        justify-content: space-between;
+        align-items:center;
+        background-color: $event_bg;
+        border-radius:2px;
+        margin:2rem 1rem;
+        padding:3rem;
+    }
+
+    &__item {
+          
+    
+           h4 {
+            font-size:2rem;
+             margin-bottom:.5rem;
+           }
+    
+           h6 {
+            font-size:1.5rem;
+            color:orangered;
+           }
+    
+           p {
+            font-size:1.2rem;
+            margin-bottom:1rem;
+            color:$blue;
+           }
+       }
+ }

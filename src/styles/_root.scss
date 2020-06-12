@@ -1,0 +1,251 @@
+@mixin flexCenter {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+@mixin btnGeneric {
+    outline:none;
+    border:none;
+    border-radius:5px;
+    font-size:1.8rem;
+    font-weight:600;
+    cursor:pointer;
+}
+
+// MEDIA QUERIES
+
+
+
+
+@mixin  respond($breakpoint) {
+  @if$breakpoint == xm-phone {
+      @media only screen and (max-width:17em) {
+          @content;
+      }//270px
+  }
+
+  @if$breakpoint == misc2 {
+    @media only screen and (max-width:25em) {
+        @content;
+    }//400px
+}
+
+  @if$breakpoint == phone {
+      @media only screen and (max-width:37.5em) {
+          @content;
+      }//600px
+  }
+  
+  @if$breakpoint == misc3 {
+    @media only screen and (max-width:43.75em) {
+        @content;
+    }//700px
+}
+
+  @if$breakpoint == misc1 {
+    @media only screen and (max-width:50em) {
+        @content;
+    }//800
+  }
+
+  @if$breakpoint == tab-port {
+    @media only screen and (max-width:56.25em) {
+        @content;
+    }//900
+}
+
+  @if$breakpoint == tab-land {
+      @media only screen and (max-width:75em) {
+          @content;
+      }//1200
+  }
+
+  @if$breakpoint == big-desktop {
+      @media  only screen and (min-width:112.5em) {
+          @content;
+      }//1800  
+  }
+}
+
+.form-group {
+    width:100%;
+    display:flex;
+    flex-direction:column;
+
+    &__label {
+        color:$blue;
+        font-size:2rem;
+        font-weight:600;
+        font-family: "Montserrat";
+        margin-bottom:.5rem;
+    }
+
+    &__email, 
+    &__password,
+    &__text,
+    &__textarea {
+        font-size:1.5rem;
+        padding:1rem;
+        border:none;
+        border-radius:5px;
+        background-color: $grey;
+        font-family:inherit; 
+        color:$blue;
+        width:100%;
+        margin-bottom:1rem;
+
+        &::-webkit-input-placeholder {
+           padding:1rem;
+        }
+    }
+
+    &__textarea {
+        height:10rem;
+
+        @include respond(misc3) {
+            height:15rem;
+        }
+    }
+}
+
+.btn {
+    width:100%;
+    @include flexCenter;
+    height:5rem;
+    @include btnGeneric;
+    margin-bottom:1rem;
+   
+
+    &-primary {
+        color:$white;
+        background-color:$blue;
+
+        &:hover {
+            background-color:$blue-hover;
+        }
+    }
+
+    &-danger {
+        color:$white;
+        background-color:orangered;
+
+        &:hover {
+            background-color:rgba(255, 68, 0, 0.496);
+        }
+    }
+}
+
+.link {
+    height:4rem;
+}
+
+.link__btn {
+    @include flexCenter;
+    height:5rem;
+    padding:1rem 2rem;
+    @include btnGeneric;
+
+    color:$white;
+    background-color:$blue;
+
+    &:hover {
+        background-color:$blue-hover;
+    }
+
+}
+
+
+.loading{
+    // min-height:10rem;
+    height:100vh;
+    // height:20rem;
+    width:100vw;
+    // width:20rem;
+    background-color:$white;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+  
+
+    &__circle {
+        width:7rem;
+        height:7rem;
+        border-radius:50%;
+        border:5px solid $grey;
+        //border-bottom-color: $blue;
+        background-color:$white;
+        animation: spin infinite 1s forwards;
+        position: relative;
+
+        &:before,
+        &:after {
+            content:'';
+            position:absolute;
+            border-radius:50%;
+            width:2rem;
+            height:2rem;
+            background-color: $blue;
+        }
+
+        &:before {   
+            top:0;
+            left:0;
+        }
+
+        &:after {   
+            bottom:0;
+            right:0;
+        }
+
+    }
+}
+
+.button__group {
+    display: flex;
+    justify-content: flex-end;
+    margin-right:2rem;
+    margin-bottom: 2rem;
+
+    button {
+        padding: 1rem 2rem;
+        margin-left: 1rem;
+        @include btnGeneric;
+
+        &.primary {
+            color:$white;
+            background-color:$purple;
+    
+            &:hover {
+                background-color:rgba(30, 4, 58, 0.496);
+            }
+        }
+    
+        &.danger {
+            color:$white;
+            background-color:orangered;
+    
+            &:hover {
+                background-color:rgba(255, 68, 0, 0.496);
+            }
+        }
+    }
+}
+
+.info {
+    color:$purple;
+    font-size:2rem;
+}
+
+.error {
+    color:orangered
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

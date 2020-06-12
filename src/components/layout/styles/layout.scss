@@ -1,0 +1,40 @@
+@import '../../../styles/config';
+@import '../../../styles/root';
+
+.nav {
+    height:10vh;
+    background-color:$white;
+    display:flex;
+    font-size:2rem;
+    justify-content:space-between;
+    align-items:center;
+
+    h2 {
+        margin-left:2rem;
+        color:$purple;
+    }
+
+    &__list {
+         font-weight:600;
+         font-size:1.5rem;
+         margin-right:2rem;
+
+         &-link {
+             margin-right:1rem;
+
+            &:link {
+                text-decoration:none;
+            }
+
+             &:hover {
+                color:$blue;
+            }
+         }
+    }
+
+
+    @include respond(phone) {
+        color:$blue;
+    } 
+}
+
