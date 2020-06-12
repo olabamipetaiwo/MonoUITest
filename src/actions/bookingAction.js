@@ -10,7 +10,8 @@ import {
  export const fetchBookings = (userId) => async (dispatch) => {
     try{
         const res = await Axios({
-            url:'http://localhost:5000/graphql',
+            // url:'http://localhost:5000/graphql',
+            url:'https://eventbookerapi.herokuapp.com/graphql',
             method:'post',
             data: {
                  query:`
@@ -50,7 +51,8 @@ import {
  export const bookEvent = (eventId) => async (dispatch) => {
      try{
          const res = await Axios({
-             url:'http://localhost:5000/graphql',
+            //  url:'http://localhost:5000/graphql',
+            url:'https://eventbookerapi.herokuapp.com/graphql',
              method:'post',
              data: {
                   query:`
@@ -88,7 +90,8 @@ import {
 export const cancelBooking = (bookingId) => async (dispatch) => {
     try {
          await Axios({
-            url:'http://localhost:5000/graphql',
+            // url:'http://localhost:5000/graphql',
+            url:'https://eventbookerapi.herokuapp.com/graphql',
             method:'post',
             data: {
                  query:`

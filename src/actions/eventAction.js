@@ -21,7 +21,8 @@ export const clearCurrent = () => async (dispatch) => {
 export const fetchEvents = (userId) => async (dispatch) => {
     try{
         const res = await Axios({
-            url:'http://localhost:5000/graphql',
+            // url:'http://localhost:5000/graphql',
+            url:'https://eventbookerapi.herokuapp.com/graphql',
             method:'post',
             data: {
                  query:`
@@ -57,7 +58,8 @@ export const createEvent = (event) => async (dispatch) => {
     const {title,description,price,evdate} = event;
     try {
         const res = await Axios({
-            url:'http://localhost:5000/graphql',
+            // url:'http://localhost:5000/graphql',
+            url:'https://eventbookerapi.herokuapp.com/graphql',
             method:'post',
             data: {
                  query:`

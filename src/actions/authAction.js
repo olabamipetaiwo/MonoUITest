@@ -34,7 +34,8 @@ export const createUser = (user) => async (dispatch) => {
     await dispatch(setLoading());
     try {
         const res = await Axios({
-            url:'http://localhost:5000/graphql',
+            // url:'http://localhost:5000/graphql',
+            url:'https://eventbookerapi.herokuapp.com/graphql',
             method:'post',
             data: {
                  query:`
@@ -71,7 +72,8 @@ export const loginUser = (user) => async (dispatch) => {
     await dispatch(setLoading());
     try{
         const res = await Axios({
-            url:'http://localhost:5000/graphql',
+            // url:'http://localhost:5000/graphql',
+            url:'https://eventbookerapi.herokuapp.com/graphql',
             method:'post',
             data: {
                  query:`
@@ -114,7 +116,8 @@ export const fetchUser = (userId) => async (dispatch) => {
     await setAuthToken(localStorage.token);
     try{
         const res = await Axios({
-            url:'http://localhost:5000/graphql',
+            // url:'http://localhost:5000/graphql',
+            url:'https://eventbookerapi.herokuapp.com/graphql',
             method:'post',
             data: {
                  query:`
