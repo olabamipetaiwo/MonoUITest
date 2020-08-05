@@ -1,0 +1,17 @@
+@import '../../styles/config';
+@import '../../styles/root';
+
+
+.notfound {
+    @include flexCenter;
+    width:100%;
+
+    h1 {
+        color:$white;
+        font-size:$base_font;
+        font-size:7rem;
+        font-weight:600;
+        width:70%;
+        text-align:center;
+    }
+}

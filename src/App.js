@@ -1,75 +1,33 @@
-import React, {Fragment, useState,useEffect}  from 'react';
-import { BrowserRouter as Router,Switch,Route,Redirect}  from 'react-router-dom';
-import {
-   CSSTransition,
-   TransitionGroup,
- } from 'react-transition-group';
-import './App.scss';
-import lazyComponentLoader from './HOC/LazyLoader';
+import React ,{Fragment} from 'react';
+import { 
+  BrowserRouter as Router,
+  Switch,
+  Route }  from 'react-router-dom';
 
-import Navbar from './components/layout/navbar.jsx';
-// import Login from './components/auth/login.jsx';
-import Register from './components/auth/register.jsx';
-import Dashboard from "./components/dashboard/dashboard.jsx";
-import Event from './components/event/event.jsx';
-import Booking from './components/booking/booking.jsx';
-import NotFound from './components/layout/notFound.jsx';
-import PrivateRoute from './components/routing/privateRouteComponent';
-import Modal from './components/modal/modal';
-import Loader from './components/layout/loader';
+import NotFound from './components/layout/notFound';
+import Home from './components/pages/home';
+import Select from './components/pages/select';
+import Login from './components/pages/login';
+import Grant from './components/pages/grant';
+import Success from './components/pages/success';
 
-const Login = lazyComponentLoader(() => import('./components/auth/login.jsx'));
+const App =() => {
 
 
-
-
-
-
-const App = () => {   
-
-   const [authIsReady,setAuthIsReady] = useState(false);
-
-   useEffect(() => {
-      setAuthIsReady(true);
-      //eslint-disable-next-line
-   },[]);
-
-  
-  if(authIsReady) {
-      return (
-            <Fragment>
-                  <div className="container">
-                     <Router>
-                        <Navbar />
-                        <Route render={({location}) => ( 
-                              <TransitionGroup>
-                              <CSSTransition key={location.key}
-                                       timeout={300}
-                                       className="fade" >
-                                          <Switch>
-                                             <Redirect from="/" to="/login" exact />
-                                             <PrivateRoute exact path="/events" component={Event} /> 
-                                             <PrivateRoute exact path="/bookings" component={Booking} /> 
-                                             <PrivateRoute exact path="/dashboard" component={Dashboard} /> 
-                                             <Route exact path="/register" component={Register} /> 
-                                             <Route exact path="/login" component={Login} /> 
-                                             <Route exact path="/modal" component={Modal} /> 
-                                             <Route component={NotFound} />
-                                          </Switch>
-                              </CSSTransition>
-                              </TransitionGroup> 
-                        )} />                  
-                     </Router>
-               </div>
-            </Fragment>
-      );
-  }else {
-      return (
-         <Fragment>
-            <Loader />
-         </Fragment>
-      );
-  }
+return (
+  	     <Fragment>
+              <Router>
+                     <Switch>  
+                            <Route exact path="/" component={Home} /> 
+                            <Route exact path="/select" component={Select} /> 
+                            <Route exact path="/login" component={Login} /> 
+                            <Route exact path="/grant" component={Grant} /> 
+                            <Route exact path="/success" component={Success} /> 
+                            <Route component={NotFound} />
+                       </Switch>            
+              </Router>
+          </Fragment>
+);
 }
 
 export default App;

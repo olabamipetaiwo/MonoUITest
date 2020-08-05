@@ -1,0 +1,158 @@
+@import '../../styles/config';
+@import '../../styles/root';
+@import '../../styles/base';
+
+.grant {
+     margin-top:15rem;
+     padding:3rem;
+     background:$main;
+     display:flex;
+     flex-direction:column;
+     justify-content:space-between;
+     align-items:flex-start;
+     width:37.5rem;
+
+     @include respond(misc3) {
+        margin-top:0;
+        width: 70%;
+        height:70%;
+     }
+
+     .back {
+        margin-bottom:1.2rem;
+     }
+
+     figure {
+         width:4rem;
+         height:4rem;
+
+         svg {
+             width:100%;
+             height:100%
+         }
+     }
+
+     p {
+         @include fontNormal(1.6rem,2rem,$black);
+
+         a {
+             font-weight:bold;
+             text-decoration: underline;
+             color:$black;
+             padding-bottom:3px;
+         }
+     }
+
+     form {
+        width:100%;
+        padding:3rem 1.5rem;
+        background:$main2;
+        border-radius: 24px;
+        margin-bottom:1.2rem;
+
+        .form__group {
+            margin-bottom:1.2rem;
+            cursor:pointer;
+
+            label {
+                @include fontBold(1.4rem,1.8rem,$black);
+            }
+
+            input[type="checkbox"] {
+                // display:none;
+                // opacity:0;
+                appearance:none;
+
+
+                &:checked ~ span.checkmark:after {
+                    display:block;
+                }
+            }
+
+            .checkmark {
+                height:2.5rem;
+                width:2.5rem;
+                background-color: $black;
+                position:relative;
+                border-radius:8px;
+
+                &:after {
+                    content:'';
+                    position: absolute;
+                    left:1rem;
+                    top:.7rem;
+                    width:.5rem;
+                    height:1rem;
+                    border:solid $white;
+                    border-width:0 3px 3px 0;
+                    transform: rotate(45deg);
+
+                    display:none;
+                }
+
+                &:hover {
+                    background-color:rgba($black,0.5);
+                }
+            }
+        }
+     }
+
+     .row {
+         width:100%;
+         display: flex;
+         align-items: center;
+         justify-content:space-between;
+
+         a {
+            border-radius: 24px;
+            @include flexCenter;
+            outline:none;
+            flex-basis:47%;
+            border:none;
+            padding-top:1rem;
+            padding-bottom:1rem;
+            @include fontBold(1.9rem,2.4rem,#101326);
+            cursor:pointer;
+            transition:all .2s;
+            margin-top:2rem;
+            margin-bottom:2rem;
+            // background: #68F3A8;
+
+            &.deny {
+              background: #E3F1EB;
+            }
+
+            &.success {
+              background: #68F3A8;
+            }
+         }
+     }
+
+     h1 {
+         @include fontBold(3.2rem,4.1rem,$black);
+     }
+
+     p {
+         
+        margin-top:1.5rem;
+        @include fontNormal(1.6rem,2.4rem,rgba(#101326,0.5));
+        margin-bottom:2rem;
+     }
+     
+     .footer {
+        width:100%;
+        display: flex;
+        align-items: center;
+        justify-content:space-between;
+        background:rgba(#E1EFE9,.5);
+        border-radius: 19.2px;
+        padding:1rem;
+
+        figure {
+            margin-right:1.2rem;
+        }
+     }
+
+}
+
+
