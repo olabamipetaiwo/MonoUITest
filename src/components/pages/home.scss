@@ -13,12 +13,12 @@
 
      @include respond(misc3) {
         width: 70%;
-        height:70%;
      }
 
      figure {
          width:4rem;
          height:4rem;
+         margin-bottom:1.5rem;
 
          svg {
              width:100%;

@@ -13,7 +13,6 @@
 
      @include respond(misc3) {
         width: 70%;
-        height:70%;
      }
 
      a.login {
@@ -28,14 +27,14 @@
         @include fontBold(1.9rem,2.4rem,#101326);
         cursor:pointer;
         transition:all .2s;
-        margin-bottom:4rem;
+        margin-bottom:6rem;
      }
 
      figure,
      a {
          width:4rem;
          height:4rem;
-         margin-bottom:2rem;
+         margin-bottom:3rem;
 
          svg {
              width:100%;
@@ -73,6 +72,7 @@
 
             input {
                 background-color:transparent;
+                width:100%;
                 border:none;
                 outline:none;
                 @include fontBold(1.8rem,2.3rem,$white);

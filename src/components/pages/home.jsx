@@ -21,8 +21,6 @@ const Home =() => {
 
               <h1>
                   Muney links
-              </h1>
-              <h1>
                   your finance apps
               </h1>
               <p>Click "Select Account" to continue</p>
